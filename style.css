@@ -1,0 +1,217 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #f8f9fa, #eaeff5);
+    color: #333;
+    overflow-x: hidden;
+    perspective: 1000px;
+}
+
+header {
+    text-align: center;
+    background-color: #ffe135;
+    padding: 20px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: slide-in-top 1s ease-out;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    animation: glow 2s infinite alternate;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px;
+    background-attachment: fixed;
+    background-image: url('white-diamond.png');
+}
+
+section {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    text-align: center;
+    max-width: 300px;
+    flex: 1;
+    transform: scale(1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, border 0.4s;
+    animation: fade-in-up 1.2s ease-in-out;
+    border: 3px solid transparent;
+}
+
+section:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f7f7f7;
+    border: 3px solid rgba(255, 215, 0, 0.8);
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    animation: bounce 1.5s infinite alternate;
+}
+
+section p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #666;
+    animation: fade-in 1.5s ease-in-out;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+/*section img:hover {
+    transform: rotate(20deg) scale(1.1);
+}*/
+
+#banana {
+    background: radial-gradient(circle, #fff9db, #fef3b0);
+}
+
+#key {
+    background: radial-gradient(circle, #dbefff, #b3d9ff);
+}
+
+#jasmine {
+    background: radial-gradient(circle, #fcefee, #f8d7da);
+}
+
+#key-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+#key-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#key-button:active {
+    transform: scale(1.1) translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/*body:hover {
+    cursor: none;
+}*/
+
+#key-button:hover::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: pulse-cursor 1.5s infinite;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+@keyframes pulse-cursor {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
